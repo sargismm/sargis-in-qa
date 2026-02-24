@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sargis Mkrtchyan — QA Engineer portfolio. Test automation, bug reports, case studies, and certifications." />
+  <title>Sargis Mkrtchyan | QA Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Icons (Feather) -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">sargis<span>.qa</span></a>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="pages/bug-hall-of-fame.html">Bug Hall</a></li>
+      <li><a href="pages/automation-showcase.html">Automation</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+
+    <div class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-terminal">
+      <div class="terminal-bar">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span class="terminal-title">qa-engineer.sh</span>
+      </div>
+      <div class="terminal-body">
+        <p><span class="prompt">$ </span><span class="typed" id="typed-text"></span><span class="cursor">|</span></p>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">
+        <span class="status status-resolved">Available for hire</span>
+      </p>
+      <h1 class="hero-title">
+        Hi, I'm <span class="highlight">Sargis Mkrtchyan</span><br />
+        I break software<br />
+        <span class="highlight-green">so users don't have to.</span>
+      </h1>
+      <p class="hero-desc">
+        QA Engineer specializing in test automation, exploratory testing,
+        and quality processes. I turn ambiguity into structured test strategies
+        and bugs into learning opportunities.
+      </p>
+      <div class="hero-actions">
+        <a href="#about" class="btn btn-primary">
+          <i data-feather="user"></i> About me
+        </a>
+        <a href="assets/resume/sargis-mkrtchyan-cv.pdf" class="btn btn-outline" target="_blank">
+          <i data-feather="download"></i> Download Resume
+        </a>
+        <a href="pages/bug-hall-of-fame.html" class="btn btn-outline">
+          <i data-feather="zap"></i> Bug Hall of Fame
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-card">
+        <span class="stat-number">6+</span>
+        <span class="stat-label">Years in QA</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">&#x221e;</span>
+        <span class="stat-label">Bugs Found</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">15+</span>
+        <span class="stat-label">Projects Tested</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">5</span>
+        <span class="stat-label">Startups QA'd</span>
+      </div>
+      <div class="stat-card stat-card-funny" title="Unlike some people I know">
+        <span class="stat-number stat-number-funny">0</span>
+        <span class="stat-label">"Works on My Machine"</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="container">
+    <span class="section-label">01 / About</span>
+    <h2 class="section-title">Testing Philosophy</h2>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          QA is the last line of defence before something ships. That's not a disclaimer — it's the whole job.
+          I take ownership of the product, not just the test cases.
+        </p>
+        <br />
+        <p>
+          To test something well, you have to understand it fully — the business logic, the edge cases,
+          the parts nobody documented. I spend time learning the product the way a user would,
+          then break it the way an attacker would.
+        </p>
+        <br />
+        <p>
+          I try to be the kind of QA engineer the dev team actually wants around — someone who asks the right
+          questions early, writes bug reports that are easy to act on, and helps ship things instead of
+          just blocking them.
+        </p>
+        <div class="about-actions">
+          <a href="#skills" class="btn btn-primary"><i data-feather="tool"></i> View Skills</a>
+        </div>
+      </div>
+
+      <div class="principles">
+        <h3>Core Principles</h3>
+        <ul class="principle-list">
+          <li>
+            <i data-feather="check-circle"></i>
+            <div>
+              <strong>Shift Left Testing</strong>
+              <p>Catch issues in design and requirements before a single line of code is written.</p>
+            </div>
+          </li>
+          <li>
+            <i data-feather="check-circle"></i>
+            <div>
+              <strong>Risk-Based Prioritization</strong>
+              <p>Focus testing effort where failure costs the most — not just what's easiest to test.</p>
+            </div>
+          </li>
+          <li>
+            <i data-feather="check-circle"></i>
+            <div>
+              <strong>Automation as a Tool, Not a Goal</strong>
+              <p>Automate what provides value. Exploratory testing reveals what scripts cannot.</p>
+            </div>
+          </li>
+          <li>
+            <i data-feather="check-circle"></i>
+            <div>
+              <strong>Clear Communication</strong>
+              <p>A bug report is only as good as its reproducibility steps and impact description.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="section-alt">
+  <div class="container">
+    <span class="section-label">02 / Skills</span>
+    <h2 class="section-title">Tools & Technologies</h2>
+    <p class="section-subtitle">A hands-on skill set built across functional, automation, API, and performance testing.</p>
+
+    <div class="skills-grid">
+
+      <div class="skill-category card fade-in">
+        <div class="skill-category-header">
+          <i data-feather="monitor"></i>
+          <h3>Automation</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="tag tag-blue">Playwright</span>
+          <span class="tag tag-blue">Selenium</span>
+          <span class="tag tag-blue">Appium</span>
+          <span class="tag tag-muted">REST Assured</span>
+          <span class="tag tag-muted">Newman</span>
+          <span class="tag tag-muted">TestRigor</span>
+          <span class="tag tag-muted">Rainforest QA</span>
+        </div>
+      </div>
+
+      <div class="skill-category card fade-in">
+        <div class="skill-category-header">
+          <i data-feather="terminal"></i>
+          <h3>Languages</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="tag tag-green">Java</span>
+          <span class="tag tag-green">Python</span>
+          <span class="tag tag-green">TypeScript</span>
+          <span class="tag tag-green">JavaScript</span>
+          <span class="tag tag-muted">Ruby</span>
+          <span class="tag tag-muted">Shell</span>
+        </div>
+      </div>
+
+      <div class="skill-category card fade-in">
+        <div class="skill-category-header">
+          <i data-feather="tool"></i>
+          <h3>Tools & Platforms</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="tag tag-muted">Postman</span>
+          <span class="tag tag-muted">Jira</span>
+          <span class="tag tag-muted">Linear</span>
+          <span class="tag tag-muted">Sentry</span>
+          <span class="tag tag-muted">Docker</span>
+          <span class="tag tag-muted">TestRail</span>
+          <span class="tag tag-muted">Qase.io</span>
+          <span class="tag tag-muted">JMeter</span>
+        </div>
+      </div>
+
+      <div class="skill-category card fade-in">
+        <div class="skill-category-header">
+          <i data-feather="search"></i>
+          <h3>Methodologies</h3>
+        </div>
+        <div class="skill-list">
+          <div class="skill-tags">
+            <span class="tag tag-blue">Agile / Scrum</span>
+            <span class="tag tag-green">BDD / Gherkin</span>
+            <span class="tag tag-blue">Risk-Based Testing</span>
+            <span class="tag tag-green">Exploratory Testing</span>
+            <span class="tag tag-muted">Regression Testing</span>
+            <span class="tag tag-muted">Smoke / Sanity</span>
+            <span class="tag tag-blue">TDD</span>
+            <span class="tag tag-green">API Contract Testing</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience">
+  <div class="container">
+    <span class="section-label">03 / Experience</span>
+    <h2 class="section-title">Work Experience</h2>
+    <p class="section-subtitle">Quality engineering across consumer apps, enterprise SaaS, and cloud infrastructure.</p>
+
+    <div class="experience-list">
+
+      <div class="exp-card card fade-in">
+        <div class="exp-left">
+          <div class="exp-logo picsart-logo"><img src="assets/logos/picsart.png" alt="Picsart" /></div>
+          <div class="exp-timeline-line"></div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-header">
+            <div>
+              <h3 class="exp-company">Picsart</h3>
+              <p class="exp-role">QA Engineer</p>
+            </div>
+            <div class="exp-meta">
+              <span class="tag tag-blue">Consumer / Mobile</span>
+              <span class="exp-date mono">🇺🇸 2019 – 2021</span>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Tested Picsart's core photo and video editing flows across iOS, Android, and Web — one of the world's top creative apps with 150M+ users.</li>
+            <li>Built and maintained automated regression suites reducing manual testing effort by ~40%.</li>
+            <li>Collaborated with cross-functional teams in Agile sprints to ensure quality at each release.</li>
+            <li>Identified and documented critical UI and performance bugs across device/OS matrix.</li>
+          </ul>
+          <div class="exp-tools">
+            <span class="tag tag-muted">Selenium</span>
+            <span class="tag tag-muted">Appium</span>
+            <span class="tag tag-muted">JIRA</span>
+            <span class="tag tag-muted">TestRail</span>
+            <span class="tag tag-muted">Charles Proxy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-card card fade-in">
+        <div class="exp-left">
+          <div class="exp-logo vmware-logo"><img src="assets/logos/vmware.png" alt="VMware" /></div>
+          <div class="exp-timeline-line"></div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-header">
+            <div>
+              <h3 class="exp-company">VMware</h3>
+              <p class="exp-role">QA / SDET</p>
+            </div>
+            <div class="exp-meta">
+              <span class="tag tag-green">Enterprise / Cloud</span>
+              <span class="exp-date mono">🇺🇸 2021 – 2022</span>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Worked on quality assurance for VMware's enterprise infrastructure products used by Fortune 500 companies globally.</li>
+            <li>Designed and executed test strategies for complex distributed systems — including API, integration, and performance testing.</li>
+            <li>Participated in shift-left testing practices, reviewing requirements and design docs before development began.</li>
+            <li>Developed automation frameworks integrated into CI/CD pipelines to support continuous delivery.</li>
+          </ul>
+          <div class="exp-tools">
+            <span class="tag tag-muted">Python</span>
+            <span class="tag tag-muted">REST APIs</span>
+            <span class="tag tag-muted">Jenkins</span>
+            <span class="tag tag-muted">Docker</span>
+            <span class="tag tag-muted">Postman</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-card card fade-in">
+        <div class="exp-left">
+          <div class="exp-logo servicetitan-logo"><img src="assets/logos/servicetitan.png" alt="ServiceTitan" /></div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-header">
+            <div>
+              <h3 class="exp-company">ServiceTitan</h3>
+              <p class="exp-role">QA Engineer</p>
+            </div>
+            <div class="exp-meta">
+              <span class="tag tag-yellow">B2B SaaS</span>
+              <span class="exp-date mono">🇺🇸 2022 – 2024</span>
+            </div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Quality engineering on ServiceTitan's field service management platform — a complex, high-stakes B2B SaaS product serving thousands of businesses.</li>
+            <li>Owned end-to-end QA for multiple product features from requirements through release, writing test plans, cases, and automation.</li>
+            <li>Drove process improvements that cut regression cycle time and improved bug detection rates pre-release.</li>
+            <li>Collaborated closely with PMs, developers, and designers to catch issues during design and development phases.</li>
+          </ul>
+          <div class="exp-tools">
+            <span class="tag tag-muted">Cypress</span>
+            <span class="tag tag-muted">Playwright</span>
+            <span class="tag tag-muted">Postman</span>
+            <span class="tag tag-muted">JIRA</span>
+            <span class="tag tag-muted">GitHub Actions</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Also worked at -->
+    <div class="previously-at">
+      <p class="prev-label">Bootstrapped QA at</p>
+      <div class="prev-companies">
+        <span class="prev-company"><a href="https://www.sootchy.com/" target="_blank">🇺🇸 Sootchy</a></span>
+        <span class="prev-dot">·</span>
+        <span class="prev-company">🇸🇪 DingDongApp</span>
+        <span class="prev-dot">·</span>
+        <span class="prev-company"><a href="https://layerise.com/" target="_blank">🇩🇰 Layerise</a></span>
+        <span class="prev-dot">·</span>
+        <span class="prev-company"><a href="https://www.paltalk.com/" target="_blank">🇺🇸 Paltalk</a></span>
+        <span class="prev-dot">·</span>
+        <span class="prev-company"><a href="https://redcar.ai/" target="_blank">🇺🇸 Redcar</a></span>
+        <span class="prev-dot">·</span>
+        <span class="prev-company"><a href="https://portal.io/" target="_blank">🇺🇸 Portal</a></span>
+      </div>
+    </div>
+
+    <!-- Resume CTA -->
+    <div class="resume-cta">
+      <div class="resume-cta-text">
+        <h3>Want the full picture?</h3>
+        <p>Download my resume for complete dates, roles, and a detailed breakdown of each position.</p>
+      </div>
+      <a href="assets/resume/sargis-mkrtchyan-cv.pdf" class="btn btn-primary" target="_blank">
+        <i data-feather="download"></i> Download Resume (PDF)
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FEATURED WORK ===== -->
+<section id="work" class="section-alt">
+  <div class="container">
+    <span class="section-label">04 / Projects</span>
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-subtitle">A snapshot of the work documented in this portfolio.</p>
+
+    <div class="work-grid">
+
+      <a href="pages/bug-hall-of-fame.html" class="work-card card">
+        <div class="work-card-icon bug-icon">
+          <i data-feather="zap"></i>
+        </div>
+        <h3>Bug Hall of Fame</h3>
+        <p>Real-world bugs I've discovered — documented with impact analysis, reproduction steps, and resolution details.</p>
+        <div class="work-card-footer">
+          <span class="tag tag-red">Critical Finds</span>
+          <span class="tag tag-muted">Anonymized</span>
+        </div>
+      </a>
+
+      <a href="pages/automation-showcase.html" class="work-card card">
+        <div class="work-card-icon auto-icon">
+          <i data-feather="cpu"></i>
+        </div>
+        <h3>Automation Showcase</h3>
+        <p>Sample test frameworks built from scratch: UI, API, and performance — with CI/CD pipelines and test reports.</p>
+        <div class="work-card-footer">
+          <span class="tag tag-blue">Selenium</span>
+          <span class="tag tag-blue">Cypress</span>
+          <span class="tag tag-green">Postman</span>
+        </div>
+      </a>
+
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <span class="section-label">05 / Contact</span>
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-subtitle">Open to full-time roles, freelance projects, and consulting engagements.</p>
+
+    <div class="contact-grid">
+      <div class="contact-links">
+        <a href="mailto:sargismm@proton.me" class="contact-item card">
+          <i data-feather="mail"></i>
+          <div>
+            <strong>Email</strong>
+            <p>sargismm@proton.me</p>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/sargism" target="_blank" class="contact-item card">
+          <i data-feather="linkedin"></i>
+          <div>
+            <strong>LinkedIn</strong>
+            <p>linkedin.com/in/sargism</p>
+          </div>
+        </a>
+        <a href="https://github.com/sargismm" target="_blank" class="contact-item card">
+          <i data-feather="github"></i>
+          <div>
+            <strong>GitHub</strong>
+            <p>github.com/sargismm</p>
+          </div>
+        </a>
+        <a href="https://www.upwork.com/freelancers/sargisqa" target="_blank" class="contact-item card contact-item-upwork">
+          <i data-feather="briefcase"></i>
+          <div>
+            <strong>Hire me on Upwork</strong>
+            <p>upwork.com/freelancers/sargisqa</p>
+          </div>
+        </a>
+      </div>
+
+      <form class="contact-form card" action="https://formsubmit.co/sargismm@proton.me" method="POST">
+        <input type="hidden" name="_subject" value="Portfolio contact from sargis.qa" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="table" />
+        <h3>Send a Message</h3>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%">
+          <i data-feather="send"></i> Send Message
+        </button>
+        <p class="form-note">I typically respond within 24 hours.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <a href="#home">Back to top &uarr;</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

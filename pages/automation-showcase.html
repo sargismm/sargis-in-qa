@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Test Automation Showcase — sample frameworks and projects by Sargis Mkrtchyan." />
+  <title>Automation Showcase | Sargis Mkrtchyan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/automation.css" />
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">sargis<span>.qa</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="bug-hall-of-fame.html">Bug Hall</a></li>
+      <li><a href="automation-showcase.html" class="active">Automation</a></li>
+      <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <div class="nav-toggle" id="nav-toggle">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HEADER ===== -->
+<div class="page-header">
+  <div class="container">
+    <span class="section-label">Automation Showcase</span>
+    <h1 class="page-title">
+      <span class="highlight">&#x26A1;</span> Test Automation Showcase
+    </h1>
+    <p class="page-desc">
+      Production-quality automation frameworks built from scratch — covering UI, API,
+      and performance testing. Each project includes source code, documentation,
+      CI/CD pipeline configuration, and sample test reports.
+    </p>
+    <div class="page-header-meta">
+      <span class="tag tag-blue">Open Source</span>
+      <span class="tag tag-green">CI/CD Ready</span>
+      <span class="tag tag-muted">GitHub Linked</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROJECTS ===== -->
+<section class="projects-section">
+  <div class="container">
+
+    <!-- Project 1: Cypress E2E -->
+    <article class="project-card card fade-in">
+      <div class="project-header">
+        <div class="project-title-group">
+          <div class="project-icon ui-icon"><i data-feather="monitor"></i></div>
+          <div>
+            <div class="project-type-label">UI Automation</div>
+            <h2 class="project-title">Playwright E2E Test Suite</h2>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/sargismm" target="_blank" class="btn btn-outline btn-sm">
+            <i data-feather="github"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <p class="project-desc">
+        A full end-to-end test suite for a demo e-commerce application built with Playwright.
+        Covers critical user flows including registration, login, product browsing, cart
+        management, and checkout. Integrated with GitHub Actions for automatic runs on PR.
+      </p>
+
+      <div class="project-body">
+        <div class="project-details">
+          <div class="detail-section">
+            <h4>What's covered</h4>
+            <ul class="feature-list">
+              <li><i data-feather="check"></i> Page Object Model (POM) architecture</li>
+              <li><i data-feather="check"></i> Fixtures and reusable test helpers</li>
+              <li><i data-feather="check"></i> Data-driven tests with JSON fixtures</li>
+              <li><i data-feather="check"></i> Visual regression testing</li>
+              <li><i data-feather="check"></i> GitHub Actions CI pipeline</li>
+              <li><i data-feather="check"></i> HTML test reports</li>
+              <li><i data-feather="check"></i> Cross-browser (Chrome, Firefox, WebKit)</li>
+            </ul>
+          </div>
+
+          <div class="detail-section">
+            <h4>Tech Stack</h4>
+            <div class="tech-tags">
+              <span class="tag tag-green">Playwright</span>
+              <span class="tag tag-blue">TypeScript</span>
+              <span class="tag tag-muted">GitHub Actions</span>
+              <span class="tag tag-muted">HTML Reporter</span>
+            </div>
+
+            <h4 style="margin-top:1.25rem">Test Stats</h4>
+            <div class="stats-row">
+              <div class="mini-stat">
+                <span class="mini-stat-number">47</span>
+                <span class="mini-stat-label">Test Cases</span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-stat-number">94%</span>
+                <span class="mini-stat-label">Pass Rate</span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-stat-number">2.3s</span>
+                <span class="mini-stat-label">Avg Run Time</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-code">
+          <div class="code-header">
+            <span class="code-filename mono">checkout.spec.ts</span>
+          </div>
+          <div class="terminal">
+            <p><span class="comment">// Playwright E2E — Checkout Flow</span></p>
+            <p><span class="prompt">test</span>.<span class="prompt">describe</span>(<span style="color:#a5d6ff">'Checkout Flow'</span>, () => {</p>
+            <p>&nbsp;&nbsp;<span class="prompt">test</span>.<span class="prompt">beforeEach</span>(<span class="prompt">async</span> ({ page }) => {</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="prompt">await</span> loginAs(page, <span style="color:#a5d6ff">'standard_user'</span>);</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="prompt">await</span> addToCart(page, <span style="color:#a5d6ff">'Sauce Labs Backpack'</span>);</p>
+            <p>&nbsp;&nbsp;});</p>
+            <br />
+            <p>&nbsp;&nbsp;<span class="prompt">test</span>(<span style="color:#a5d6ff">'completes checkout successfully'</span>, <span class="prompt">async</span> ({ page }) => {</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="prompt">await</span> page.getByTestId(<span style="color:#a5d6ff">'checkout'</span>).click();</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="prompt">await</span> fillCheckoutForm(page, checkoutData.valid);</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="prompt">await</span> expect(page.locator(<span style="color:#a5d6ff">'.complete-header'</span>))</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.toContainText(<span style="color:#a5d6ff">'Thank you'</span>);</p>
+            <p>&nbsp;&nbsp;});</p>
+            <p>});</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 2: Postman API -->
+    <article class="project-card card fade-in">
+      <div class="project-header">
+        <div class="project-title-group">
+          <div class="project-icon api-icon"><i data-feather="code"></i></div>
+          <div>
+            <div class="project-type-label">API Testing</div>
+            <h2 class="project-title">Postman API Test Collection</h2>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/sargismm" target="_blank" class="btn btn-outline btn-sm">
+            <i data-feather="github"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <p class="project-desc">
+        A complete Postman collection covering a public REST API (JSONPlaceholder + Reqres.in).
+        Demonstrates chained requests, environment variables, pre-request scripts, and
+        automated assertions. Exported as a Newman CLI suite for CI integration.
+      </p>
+
+      <div class="project-body">
+        <div class="project-details">
+          <div class="detail-section">
+            <h4>What's covered</h4>
+            <ul class="feature-list">
+              <li><i data-feather="check"></i> CRUD endpoint coverage (GET, POST, PUT, DELETE)</li>
+              <li><i data-feather="check"></i> Auth token chaining (login → use token)</li>
+              <li><i data-feather="check"></i> Schema validation with tv4 / Ajv</li>
+              <li><i data-feather="check"></i> Environment-based config (dev/staging/prod)</li>
+              <li><i data-feather="check"></i> Newman HTML reporter</li>
+              <li><i data-feather="check"></i> GitHub Actions integration</li>
+            </ul>
+          </div>
+
+          <div class="detail-section">
+            <h4>Tech Stack</h4>
+            <div class="tech-tags">
+              <span class="tag tag-green">Postman</span>
+              <span class="tag tag-blue">Newman</span>
+              <span class="tag tag-muted">JavaScript</span>
+              <span class="tag tag-muted">GitHub Actions</span>
+            </div>
+
+            <h4 style="margin-top:1.25rem">Test Stats</h4>
+            <div class="stats-row">
+              <div class="mini-stat">
+                <span class="mini-stat-number">86</span>
+                <span class="mini-stat-label">Requests</span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-stat-number">142</span>
+                <span class="mini-stat-label">Assertions</span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-stat-number">100%</span>
+                <span class="mini-stat-label">Pass Rate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-code">
+          <div class="code-header">
+            <span class="code-filename mono">newman-ci.yml</span>
+          </div>
+          <div class="terminal">
+            <p><span class="comment"># GitHub Actions — Newman API Tests</span></p>
+            <p><span class="output">name:</span> API Tests</p>
+            <p><span class="output">on:</span> [push, pull_request]</p>
+            <br />
+            <p><span class="output">jobs:</span></p>
+            <p>&nbsp;&nbsp;<span class="output">test:</span></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="output">runs-on:</span> ubuntu-latest</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="output">steps:</span></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="prompt">- name:</span> Run Newman</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="output">run:</span> |</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newman run collection.json \</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-e environments/staging.json \</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--reporters htmlextra</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 3: k6 Performance -->
+    <article class="project-card card fade-in">
+      <div class="project-header">
+        <div class="project-title-group">
+          <div class="project-icon perf-icon"><i data-feather="activity"></i></div>
+          <div>
+            <div class="project-type-label">Performance Testing</div>
+            <h2 class="project-title">k6 Load Testing Framework</h2>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/sargismm" target="_blank" class="btn btn-outline btn-sm">
+            <i data-feather="github"></i> View on GitHub
+          </a>
+        </div>
+      </div>
+
+      <p class="project-desc">
+        A structured k6 performance testing project covering load, stress, and spike test
+        scenarios. Results are pushed to InfluxDB and visualized in Grafana dashboards.
+        Includes threshold definitions and automated pass/fail CI gates.
+      </p>
+
+      <div class="project-body">
+        <div class="project-details">
+          <div class="detail-section">
+            <h4>What's covered</h4>
+            <ul class="feature-list">
+              <li><i data-feather="check"></i> Load / stress / spike test scenarios</li>
+              <li><i data-feather="check"></i> SLA thresholds (p95 &lt; 500ms)</li>
+              <li><i data-feather="check"></i> InfluxDB + Grafana dashboards</li>
+              <li><i data-feather="check"></i> Virtual user ramp-up configuration</li>
+              <li><i data-feather="check"></i> HTML summary report generation</li>
+              <li><i data-feather="check"></i> CI/CD pipeline with threshold gates</li>
+            </ul>
+          </div>
+
+          <div class="detail-section">
+            <h4>Tech Stack</h4>
+            <div class="tech-tags">
+              <span class="tag tag-yellow">k6</span>
+              <span class="tag tag-blue">JavaScript</span>
+              <span class="tag tag-muted">InfluxDB</span>
+              <span class="tag tag-muted">Grafana</span>
+              <span class="tag tag-muted">Docker</span>
+            </div>
+
+            <h4 style="margin-top:1.25rem">Benchmark</h4>
+            <div class="stats-row">
+              <div class="mini-stat">
+                <span class="mini-stat-number">500</span>
+                <span class="mini-stat-label">VUs</span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-stat-number">p95</span>
+                <span class="mini-stat-label">&lt; 480ms</span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-stat-number">99.8%</span>
+                <span class="mini-stat-label">Success Rate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-code">
+          <div class="code-header">
+            <span class="code-filename mono">load-test.js</span>
+          </div>
+          <div class="terminal">
+            <p><span class="comment">// k6 — Load Test Configuration</span></p>
+            <p><span class="prompt">export const</span> options = {</p>
+            <p>&nbsp;&nbsp;stages: [</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;{ duration: <span style="color:#a5d6ff">'2m'</span>, target: <span style="color:#79c0ff">100</span> },</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;{ duration: <span style="color:#a5d6ff">'5m'</span>, target: <span style="color:#79c0ff">500</span> },</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;{ duration: <span style="color:#a5d6ff">'2m'</span>, target: <span style="color:#79c0ff">0</span> },</p>
+            <p>&nbsp;&nbsp;],</p>
+            <p>&nbsp;&nbsp;thresholds: {</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#a5d6ff">'http_req_duration'</span>: [<span style="color:#a5d6ff">'p(95)&lt;500'</span>],</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#a5d6ff">'http_req_failed'</span>:   [<span style="color:#a5d6ff">'rate&lt;0.01'</span>],</p>
+            <p>&nbsp;&nbsp;},</p>
+            <p>};</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <p>
+      <a href="../index.html">&larr; Back to Portfolio</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://github.com/sargismm" target="_blank">GitHub Profile</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bug Hall of Fame — critical and interesting bugs discovered by Sargis Mkrtchyan, QA Engineer." />
+  <title>Bug Hall of Fame | Sargis Mkrtchyan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/bug-hall.css" />
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">sargis<span>.qa</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="bug-hall-of-fame.html" class="active">Bug Hall</a></li>
+      <li><a href="automation-showcase.html">Automation</a></li>
+      <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <div class="nav-toggle" id="nav-toggle">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HEADER ===== -->
+<div class="page-header">
+  <div class="container">
+    <span class="section-label">Bug Hall of Fame</span>
+    <h1 class="page-title">
+      <span class="highlight-green">&#x1f41b;</span> Bug Hall of Fame
+    </h1>
+    <p class="page-desc">
+      Real bugs. Real impact. Real fixes. A curated collection of the most interesting,
+      critical, and educational bugs I've discovered throughout my QA career — anonymized
+      where needed to protect proprietary systems.
+    </p>
+    <div class="page-header-meta">
+      <span class="tag tag-red">Critical Finds</span>
+      <span class="tag tag-yellow">High Impact</span>
+      <span class="tag tag-green">Resolved</span>
+      <span class="tag tag-muted">Anonymized</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FILTER BAR ===== -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-inner">
+      <span class="filter-label">Filter by severity:</span>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="critical">Critical</button>
+        <button class="filter-btn" data-filter="high">High</button>
+        <button class="filter-btn" data-filter="medium">Medium</button>
+        <button class="filter-btn" data-filter="security">Security</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BUG ENTRIES ===== -->
+<section class="bugs-section">
+  <div class="container">
+    <div class="bugs-grid" id="bugs-grid">
+
+      <!-- Bug #1 -->
+      <article class="bug-card card fade-in" data-severity="critical">
+        <div class="bug-header">
+          <div class="bug-id">
+            <span class="mono">#BUG-001</span>
+          </div>
+          <div class="bug-badges">
+            <span class="tag tag-red">Critical</span>
+            <span class="status status-resolved">Resolved</span>
+          </div>
+        </div>
+
+        <h2 class="bug-title">Race Condition in Payment Processing Causes Double Charges</h2>
+
+        <div class="bug-meta-row">
+          <span class="bug-meta-item"><i data-feather="tag"></i> E-Commerce Platform</span>
+          <span class="bug-meta-item"><i data-feather="layers"></i> Backend / Payments</span>
+          <span class="bug-meta-item"><i data-feather="calendar"></i> 2023</span>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="alert-triangle"></i> The Bug</h4>
+          <p>
+            When a user double-clicked the "Pay Now" button faster than the UI could disable it,
+            two simultaneous POST requests were sent to the payment endpoint. The backend processed
+            both before the session lock could prevent it, resulting in duplicate charges and duplicate
+            order creation.
+          </p>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="trending-up"></i> Impact</h4>
+          <div class="impact-grid">
+            <div class="impact-item impact-red">
+              <strong>Financial</strong>
+              <p>~40 customers double-charged before detection. Total exposure: ~$3,200.</p>
+            </div>
+            <div class="impact-item impact-yellow">
+              <strong>Operational</strong>
+              <p>Manual refund processing required. Customer support backlog for 3 days.</p>
+            </div>
+            <div class="impact-item impact-red">
+              <strong>Trust</strong>
+              <p>3 customers escalated to credit card disputes, threatening merchant account.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="search"></i> How I Found It</h4>
+          <p>
+            During exploratory testing of the checkout flow, I noticed the "Pay Now" button had no
+            optimistic loading state. I used browser DevTools to throttle the network to "Slow 3G"
+            and manually double-clicked. The network tab showed two successful <code>POST /orders</code>
+            requests with <code>201 Created</code> responses — both with unique order IDs.
+          </p>
+          <div class="terminal" style="margin-top:1rem">
+            <p><span class="comment"># Reproduced with curl to simulate concurrent requests</span></p>
+            <p><span class="prompt">$ </span>curl -X POST /api/orders -d '{"cart_id":"abc"}' &amp; \</p>
+            <p>&nbsp;&nbsp;curl -X POST /api/orders -d '{"cart_id":"abc"}'</p>
+            <p class="output"># Both returned 201 Created with different order_ids</p>
+            <p class="output"># {"order_id": "ORD-9821"} and {"order_id": "ORD-9822"}</p>
+          </div>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="check-circle"></i> Resolution</h4>
+          <p>
+            Frontend: Disabled button immediately on first click via JS flag. Backend: Added
+            idempotency key validation using <code>cart_id + user_id + timestamp_bucket</code>
+            to reject duplicate requests within a 30-second window.
+          </p>
+        </div>
+
+        <div class="bug-tags">
+          <span class="tag tag-muted">Race Condition</span>
+          <span class="tag tag-muted">Idempotency</span>
+          <span class="tag tag-muted">Payments</span>
+          <span class="tag tag-muted">Exploratory</span>
+        </div>
+      </article>
+
+      <!-- Bug #2 -->
+      <article class="bug-card card fade-in" data-severity="security">
+        <div class="bug-header">
+          <div class="bug-id">
+            <span class="mono">#BUG-002</span>
+          </div>
+          <div class="bug-badges">
+            <span class="tag tag-red">Security</span>
+            <span class="status status-resolved">Resolved</span>
+          </div>
+        </div>
+
+        <h2 class="bug-title">Insecure Direct Object Reference Exposes All User Orders</h2>
+
+        <div class="bug-meta-row">
+          <span class="bug-meta-item"><i data-feather="tag"></i> SaaS Dashboard</span>
+          <span class="bug-meta-item"><i data-feather="layers"></i> API / Auth</span>
+          <span class="bug-meta-item"><i data-feather="calendar"></i> 2022</span>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="alert-triangle"></i> The Bug</h4>
+          <p>
+            The orders API endpoint <code>GET /api/orders/{id}</code> returned order details
+            without verifying the authenticated user owned the requested order. Any logged-in
+            user could enumerate any order by incrementing the integer ID.
+          </p>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="trending-up"></i> Impact</h4>
+          <div class="impact-grid">
+            <div class="impact-item impact-red">
+              <strong>Privacy / GDPR</strong>
+              <p>Full name, address, and order history of all users exposed to any authenticated user.</p>
+            </div>
+            <div class="impact-item impact-red">
+              <strong>Compliance</strong>
+              <p>Potential GDPR violation if exploited — mandatory breach notification.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="search"></i> How I Found It</h4>
+          <p>
+            During API testing with Postman, I noticed order IDs were sequential integers.
+            I created two test accounts, placed orders on each, then used Account A's token
+            to request Account B's order ID. The API returned full order data without any
+            authorization error.
+          </p>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="check-circle"></i> Resolution</h4>
+          <p>
+            API layer updated to validate <code>order.user_id === authenticated_user.id</code>
+            before returning data. Order IDs migrated from sequential integers to UUIDs
+            to eliminate enumeration risk.
+          </p>
+        </div>
+
+        <div class="bug-tags">
+          <span class="tag tag-muted">IDOR</span>
+          <span class="tag tag-muted">OWASP A01</span>
+          <span class="tag tag-muted">API Security</span>
+          <span class="tag tag-muted">GDPR</span>
+        </div>
+      </article>
+
+      <!-- Bug #3 -->
+      <article class="bug-card card fade-in" data-severity="high">
+        <div class="bug-header">
+          <div class="bug-id">
+            <span class="mono">#BUG-003</span>
+          </div>
+          <div class="bug-badges">
+            <span class="tag tag-yellow">High</span>
+            <span class="status status-resolved">Resolved</span>
+          </div>
+        </div>
+
+        <h2 class="bug-title">Date Timezone Bug Causes Appointments to Book at Wrong Times</h2>
+
+        <div class="bug-meta-row">
+          <span class="bug-meta-item"><i data-feather="tag"></i> Healthcare Scheduling App</span>
+          <span class="bug-meta-item"><i data-feather="layers"></i> Frontend / Logic</span>
+          <span class="bug-meta-item"><i data-feather="calendar"></i> 2023</span>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="alert-triangle"></i> The Bug</h4>
+          <p>
+            The appointment booking system stored times in UTC but displayed them without
+            timezone conversion. Users in UTC-5 (EST) booking a "3:00 PM" slot were actually
+            booking a 3:00 PM UTC slot — which appeared as 10:00 AM to the provider.
+            Appointments were consistently off by the user's UTC offset.
+          </p>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="trending-up"></i> Impact</h4>
+          <div class="impact-grid">
+            <div class="impact-item impact-yellow">
+              <strong>Patient Safety</strong>
+              <p>Missed medical appointments. 12 documented cases in a 2-week window.</p>
+            </div>
+            <div class="impact-item impact-yellow">
+              <strong>Revenue</strong>
+              <p>No-show fees reversed. Estimated $4,800 in lost appointment revenue.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="search"></i> How I Found It</h4>
+          <p>
+            During regression testing I checked the feature from a VPN endpoint set to
+            a different timezone (US/Eastern vs UTC). The confirmation email showed
+            "3:00 PM" but the calendar invite attachment contained <code>DTSTART:20230415T150000Z</code>
+            — clearly UTC, not local time.
+          </p>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="check-circle"></i> Resolution</h4>
+          <p>
+            Backend updated to store appointments with explicit timezone metadata.
+            Frontend updated to use the browser's <code>Intl.DateTimeFormat</code> API
+            for display and confirmation emails rebuilt using IANA timezone strings.
+          </p>
+        </div>
+
+        <div class="bug-tags">
+          <span class="tag tag-muted">Timezone</span>
+          <span class="tag tag-muted">Date Handling</span>
+          <span class="tag tag-muted">Healthcare</span>
+          <span class="tag tag-muted">Regression</span>
+        </div>
+      </article>
+
+      <!-- Bug #4 -->
+      <article class="bug-card card fade-in" data-severity="medium">
+        <div class="bug-header">
+          <div class="bug-id">
+            <span class="mono">#BUG-004</span>
+          </div>
+          <div class="bug-badges">
+            <span class="tag tag-blue">Medium</span>
+            <span class="status status-resolved">Resolved</span>
+          </div>
+        </div>
+
+        <h2 class="bug-title">CSV Export Silently Truncates Records at 1,000 Rows</h2>
+
+        <div class="bug-meta-row">
+          <span class="bug-meta-item"><i data-feather="tag"></i> Analytics Dashboard</span>
+          <span class="bug-meta-item"><i data-feather="layers"></i> Data Export</span>
+          <span class="bug-meta-item"><i data-feather="calendar"></i> 2022</span>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="alert-triangle"></i> The Bug</h4>
+          <p>
+            The "Export All" button on a data table silently capped exports at 1,000 rows
+            due to a pagination limit copied from the display layer. No warning was shown.
+            Users with large datasets believed they had complete exports when they had
+            partial data.
+          </p>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="search"></i> How I Found It</h4>
+          <p>
+            Comparing row counts between the UI total counter ("Showing 4,372 results")
+            and the exported CSV line count (1,001 including header). A simple <code>wc -l</code>
+            check revealed the discrepancy.
+          </p>
+        </div>
+
+        <div class="bug-section">
+          <h4><i data-feather="check-circle"></i> Resolution</h4>
+          <p>
+            Export endpoint updated to use a cursor-based pagination loop instead of the
+            display pagination. Added a progress indicator and a completion notification
+            showing exact row count exported.
+          </p>
+        </div>
+
+        <div class="bug-tags">
+          <span class="tag tag-muted">Data Integrity</span>
+          <span class="tag tag-muted">Pagination</span>
+          <span class="tag tag-muted">CSV Export</span>
+          <span class="tag tag-muted">Silent Failure</span>
+        </div>
+      </article>
+
+    </div><!-- /bugs-grid -->
+
+    <!-- Submit a bug CTA -->
+    <div class="bug-cta">
+      <i data-feather="plus-circle"></i>
+      <div>
+        <h3>More bugs being documented</h3>
+        <p>This collection grows as I document more career highlights. New entries added regularly.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <p>
+      <a href="../index.html">&larr; Back to Portfolio</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://github.com/sargismm/qa-portfolio" target="_blank">GitHub</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

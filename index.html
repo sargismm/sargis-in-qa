@@ -22,14 +22,13 @@
 <!-- ===== NAV ===== -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">sargis<span>.qa</span></a>
+    <a href="index.html" class="nav-logo">sargis<span> tests it</span></a>
 
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="pages/bug-hall-of-fame.html">Bug Hall</a></li>
-      <li><a href="pages/automation-showcase.html">Automation</a></li>
+      <li><a href="pages/automation-showcase.html">Projects</a></li>
       <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
 
@@ -74,9 +73,6 @@
         </a>
         <a href="assets/resume/sargis-mkrtchyan-cv.pdf" class="btn btn-outline" target="_blank">
           <i data-feather="download"></i> Download Resume
-        </a>
-        <a href="pages/bug-hall-of-fame.html" class="btn btn-outline">
-          <i data-feather="zap"></i> Bug Hall of Fame
         </a>
       </div>
     </div>
@@ -429,31 +425,57 @@
 
     <div class="work-grid">
 
-      <a href="pages/bug-hall-of-fame.html" class="work-card card">
-        <div class="work-card-icon bug-icon">
-          <i data-feather="zap"></i>
+      <a href="https://github.com/sargismm/playwright-e2e-demo" target="_blank" class="work-card card card--automation">
+        <div class="work-card-icon ui-icon">
+          <i data-feather="monitor"></i>
         </div>
-        <h3>Bug Hall of Fame</h3>
-        <p>Real-world bugs I've discovered — documented with impact analysis, reproduction steps, and resolution details.</p>
+        <h3>Playwright E2E Test Suite</h3>
+        <p>End-to-end test suite for a demo e-commerce app. Page Object Model, GitHub Actions CI, cross-browser coverage.</p>
         <div class="work-card-footer">
-          <span class="tag tag-red">Critical Finds</span>
-          <span class="tag tag-muted">Anonymized</span>
+          <span class="tag tag-green">Playwright</span>
+          <span class="tag tag-blue">TypeScript</span>
+          <span class="tag tag-muted">GitHub Actions</span>
         </div>
       </a>
 
-      <a href="pages/automation-showcase.html" class="work-card card">
-        <div class="work-card-icon auto-icon">
-          <i data-feather="cpu"></i>
+      <a href="https://github.com/sargismm/postman-test-collection-demo" target="_blank" class="work-card card card--automation">
+        <div class="work-card-icon api-icon">
+          <i data-feather="code"></i>
         </div>
-        <h3>Automation Showcase</h3>
-        <p>Sample test frameworks built from scratch: UI, API, and performance — with CI/CD pipelines and test reports.</p>
+        <h3>Postman API Test Collection</h3>
+        <p>Full REST API collection with chained requests, schema validation, environment configs, and Newman CI integration.</p>
         <div class="work-card-footer">
-          <span class="tag tag-blue">Selenium</span>
-          <span class="tag tag-blue">Cypress</span>
           <span class="tag tag-green">Postman</span>
+          <span class="tag tag-blue">Newman</span>
+          <span class="tag tag-muted">GitHub Actions</span>
         </div>
       </a>
 
+      <a href="https://github.com/sargismm/k6-load-testing" target="_blank" class="work-card card card--automation">
+        <div class="work-card-icon perf-icon">
+          <i data-feather="activity"></i>
+        </div>
+        <h3>k6 Load Testing Framework</h3>
+        <p>Load, stress, and spike test scenarios with SLA thresholds, Grafana dashboards, and CI/CD pass/fail gates.</p>
+        <div class="work-card-footer">
+          <span class="tag tag-yellow">k6</span>
+          <span class="tag tag-blue">JavaScript</span>
+          <span class="tag tag-muted">Grafana</span>
+        </div>
+      </a>
+
+      <a href="https://app.qase.io/project/YTD" target="_blank" class="work-card card card--manual">
+        <div class="work-card-icon tc-icon">
+          <i data-feather="clipboard"></i>
+        </div>
+        <h3>YouTube Test Cases Demo</h3>
+        <p>100 structured manual test cases for YouTube across 10 suites — covering auth, playback, search, upload, and more.</p>
+        <div class="work-card-footer">
+          <span class="tag tag-green">Manual Testing</span>
+          <span class="tag tag-blue">Regression</span>
+          <span class="tag tag-muted">Qase.io</span>
+        </div>
+      </a>
 
     </div>
   </div>

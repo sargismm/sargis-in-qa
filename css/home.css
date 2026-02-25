@@ -462,8 +462,8 @@
   text-decoration: none;
 }
 
-.card--automation { border-top: 2px solid var(--color-primary); }
-.card--manual     { border-top: 2px solid #bc8cff; }
+.card.card--automation { border-left: 3px solid var(--color-primary); }
+.card.card--manual     { border-left: 3px solid #bc8cff; }
 
 .work-card h3 { color: var(--color-text); }
 .work-card p  { font-size: 0.9rem; flex: 1; }

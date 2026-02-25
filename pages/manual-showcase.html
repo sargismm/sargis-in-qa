@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Manual Testing Showcase — test cases and projects by Sargis Mkrtchyan." />
+  <title>Manual Testing | Sargis Mkrtchyan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <link rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="../css/automation.css" />
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">sargis<span> tests it</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="automation-showcase.html">Automation</a></li>
+      <li><a href="manual-showcase.html" class="active">Manual</a></li>
+      <li><a href="../index.html#contact" class="nav-cta">Contact</a></li>
+    </ul>
+    <div class="nav-toggle" id="nav-toggle">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HEADER ===== -->
+<div class="page-header">
+  <div class="container">
+    <span class="section-label">Manual Testing</span>
+    <h1 class="page-title">Manual Testing Showcase</h1>
+    <p class="page-desc">
+      Structured test suites written for real-world applications — organized by feature,
+      prioritized by risk, and ready for team use. Each project is publicly accessible
+      via Qase.io.
+    </p>
+    <div class="page-header-meta">
+      <span class="tag tag-green">Qase.io</span>
+      <span class="tag tag-blue">Regression</span>
+      <span class="tag tag-muted">Structured</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROJECTS ===== -->
+<section class="projects-section">
+  <div class="container">
+
+    <!-- Project: YouTube Test Cases -->
+    <article class="project-card card fade-in">
+      <div class="project-header">
+        <div class="project-title-group">
+          <div class="project-icon tc-icon"><i data-feather="clipboard"></i></div>
+          <div>
+            <div class="project-type-label">Test Case Suite</div>
+            <h2 class="project-title">YouTube Test Cases Demo</h2>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://app.qase.io/project/YTD" target="_blank" class="btn btn-outline btn-sm">
+            <i data-feather="external-link"></i> View on Qase.io
+          </a>
+        </div>
+      </div>
+
+      <p class="project-desc">
+        100 structured manual test cases for YouTube, organized across 10 feature suites.
+        Covers critical user flows including authentication, video playback, search,
+        upload, comments, and subscriptions. Written to production standards with
+        clear steps, preconditions, and expected results.
+      </p>
+
+      <div class="project-body">
+        <div class="project-details">
+          <div class="detail-section">
+            <h4>Test Suites</h4>
+            <ul class="feature-list">
+              <li><i data-feather="check"></i> Authentication (sign in, sign out, errors)</li>
+              <li><i data-feather="check"></i> Video Playback (controls, quality, fullscreen)</li>
+              <li><i data-feather="check"></i> Search (results, filters, suggestions)</li>
+              <li><i data-feather="check"></i> Upload (flow, validation, visibility)</li>
+              <li><i data-feather="check"></i> Comments &amp; Subscriptions</li>
+              <li><i data-feather="check"></i> Notifications, Playlists, History</li>
+              <li><i data-feather="check"></i> Settings &amp; Account</li>
+            </ul>
+          </div>
+
+          <div class="detail-section">
+            <h4>Details</h4>
+            <div class="tech-tags">
+              <span class="tag tag-green">Manual Testing</span>
+              <span class="tag tag-blue">Regression</span>
+              <span class="tag tag-muted">Qase.io</span>
+              <span class="tag tag-muted">Structured</span>
+            </div>
+
+            <h4 style="margin-top:1.25rem">Stats</h4>
+            <div class="stats-row">
+              <div class="mini-stat">
+                <span class="mini-stat-number">100</span>
+                <span class="mini-stat-label">Test Cases</span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-stat-number">10</span>
+                <span class="mini-stat-label">Suites</span>
+              </div>
+              <div class="mini-stat">
+                <span class="mini-stat-number">P0–P2</span>
+                <span class="mini-stat-label">Priority Range</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-code">
+          <div class="code-header">
+            <span class="code-filename mono">TC-YTD-001</span>
+          </div>
+          <div class="terminal">
+            <p><span class="comment">// YouTube — Sign In with Valid Credentials</span></p>
+            <p><span class="output">Suite:</span> Authentication</p>
+            <p><span class="output">Priority:</span> Critical &nbsp;<span class="output">Type:</span> Functional</p>
+            <br />
+            <p><span class="prompt">Preconditions:</span></p>
+            <p>&nbsp;&nbsp;User has a valid Google account</p>
+            <br />
+            <p><span class="prompt">Steps:</span></p>
+            <p>&nbsp;&nbsp;1. Navigate to youtube.com</p>
+            <p>&nbsp;&nbsp;2. Click <span style="color:#a5d6ff">"Sign in"</span></p>
+            <p>&nbsp;&nbsp;3. Enter valid email and password</p>
+            <p>&nbsp;&nbsp;4. Click <span style="color:#a5d6ff">"Next"</span></p>
+            <br />
+            <p><span class="output">Expected:</span> User is redirected to</p>
+            <p>&nbsp;&nbsp;YouTube homepage, logged in.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <p>
+      <a href="../index.html">&larr; Back to Portfolio</a>
+      &nbsp;&middot;&nbsp;
+      <a href="https://github.com/sargismm" target="_blank">GitHub Profile</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

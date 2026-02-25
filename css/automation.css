@@ -39,9 +39,10 @@
   flex-shrink: 0;
 }
 
-.ui-icon   { background: rgba(88,166,255,0.1); color: var(--color-primary); border: 1px solid var(--color-primary); }
-.api-icon  { background: rgba(63,185,80,0.1);  color: var(--color-accent);  border: 1px solid var(--color-accent); }
-.perf-icon { background: rgba(210,153,34,0.1); color: var(--color-warn);    border: 1px solid var(--color-warn); }
+.ui-icon   { background: rgba(88,166,255,0.1);  color: var(--color-primary); border: 1px solid var(--color-primary); }
+.api-icon  { background: rgba(63,185,80,0.1);   color: var(--color-accent);  border: 1px solid var(--color-accent); }
+.perf-icon { background: rgba(210,153,34,0.1);  color: var(--color-warn);    border: 1px solid var(--color-warn); }
+.tc-icon   { background: rgba(188,140,255,0.1); color: #bc8cff;              border: 1px solid #bc8cff; }
 
 .project-type-label {
   font-size: 0.75rem;
